@@ -29,7 +29,8 @@ function requestLookup(conf) {
     } else {
       // Let's go look it up in spec ref...
       const entry = await resolveRef(key);
-      cleanElement(elem);
+      console.log(key, entry);
+      // cleanElement(elem);
       if (!entry) {
         var msg = `Couldn't find a match for 'data-cite=${originalKey}'.`;
         console.warn(msg, elem);
@@ -64,7 +65,7 @@ function requestLookup(conf) {
 }
 
 function cleanElement(elem) {
-  ["data-cite", "data-cite-frag"]
+  ["data-cite", "data-cite-frag", "data-cite-path"]
     .filter(attrName => elem.hasAttribute(attrName))
     .forEach(attrName => elem.removeAttribute(attrName));
 }

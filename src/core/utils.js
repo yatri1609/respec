@@ -582,3 +582,12 @@ export function addId(elem, pfx = "", txt = "", noLC = false) {
   elem.id = id;
   return id;
 }
+
+// returns closest parent to an element that matches selector
+export function closestParent(elem, selector) {
+  while (elem && elem !== document.documentElement) {
+    if (elem.matches(selector)) return elem;
+    elem = elem.parentNode;
+  }
+  return null;
+}

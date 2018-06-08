@@ -4,6 +4,7 @@
 import { linkInlineCitations } from "core/data-cite";
 import { pub } from "core/pubsubhub";
 import { lang as defaultLang } from "./l10n";
+import { main as addExternalReferences } from "core/xref";
 export const name = "core/link-to-dfn";
 const l10n = {
   en: {
@@ -12,9 +13,10 @@ const l10n = {
 };
 const lang = defaultLang in l10n ? defaultLang : "en";
 
-export function run(conf, doc, cb) {
+export async function run(conf, doc, cb) {
   doc.normalize();
   var titles = {};
+  const possibleExternalLinks = [];
   Object.keys(conf.definitionMap).forEach(function(title) {
     titles[title] = {};
     var listOfDuplicateDfns = [];
@@ -114,23 +116,19 @@ export function run(conf, doc, cb) {
           ".idl:not(.extAttr), dl.methods, dl.attributes, dl.constants, dl.constructors, dl.fields, dl.dictionary-members, span.idlMemberType, span.idlTypedefType, div.idlImplementsDesc"
         ).length
       ) {
-        const link_for = linkTargets[0].for;
-        const title = linkTargets[0].title;
-        this.classList.add("respec-offending-element");
-        this.title = "Linking error: not matching <dfn>";
-        pub(
-          "warn",
-          "Found linkless <a> element " +
-            (link_for ? "for '" + link_for + "' " : "") +
-            "with text '" +
-            title +
-            "' but no matching `<dfn>`."
-        );
-        console.warn("Linkless element:", $ant[0]);
+        if ($ant[0].dataset.cite && $ant[0].dataset.cite.contains("#")) {
+          return;
+        }
+        possibleExternalLinks.push($ant[0]);
         return;
       }
       $ant.replaceWith($ant.contents());
     }
+  });
+  const badRefs = await addExternalReferences(conf, possibleExternalLinks);
+  badRefs.forEach(elem => {
+    elem.classList.add("respec-offending-element");
+    console.warn(`No data for `, elem);
   });
   linkInlineCitations(doc, conf).then(() => {
     // Added message for legacy compat with Aria specs
