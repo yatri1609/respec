@@ -16,7 +16,6 @@ const lang = defaultLang in l10n ? defaultLang : "en";
 export async function run(conf, doc, cb) {
   doc.normalize();
   var titles = {};
-  const possibleExternalLinks = [];
   Object.keys(conf.definitionMap).forEach(function(title) {
     titles[title] = {};
     var listOfDuplicateDfns = [];
@@ -67,6 +66,7 @@ export async function run(conf, doc, cb) {
       pub("error", `Duplicate definitions of '${title}' at: ${dfnsList}.`);
     }
   });
+  const possibleExternalLinks = [];
   $("a:not([href]):not([data-cite]):not(.logo)").each(function() {
     const $ant = $(this);
     if ($ant.hasClass("externalDFN")) return;
@@ -116,9 +116,6 @@ export async function run(conf, doc, cb) {
           ".idl:not(.extAttr), dl.methods, dl.attributes, dl.constants, dl.constructors, dl.fields, dl.dictionary-members, span.idlMemberType, span.idlTypedefType, div.idlImplementsDesc"
         ).length
       ) {
-        if ($ant[0].dataset.cite && $ant[0].dataset.cite.contains("#")) {
-          return;
-        }
         possibleExternalLinks.push($ant[0]);
         return;
       }

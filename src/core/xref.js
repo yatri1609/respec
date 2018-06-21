@@ -1,8 +1,6 @@
 // PRESENT ISSUES:
 // looks good. doesn't work.
 
-import { closestParent } from "core/utils";
-
 // main
 export async function main(conf, possibleExternalLinks) {
   conf.xrefs = getRefMap(possibleExternalLinks);
@@ -14,11 +12,10 @@ export async function main(conf, possibleExternalLinks) {
 
 // returns possible external refs as Map(term, [{elem, specs, types}])
 function getRefMap(elems) {
-  const closestDataCite = elem => closestParent(elem, "[data-cite]");
   return elems.reduce((xrefs, elem) => {
     let term = "xref" in elem.dataset ? elem.dataset.xref : elem.textContent;
     term = term.trim();
-    const datacite = closestDataCite(elem);
+    const datacite = elem.closest("[data-cite]");
     const specs = datacite ? datacite.dataset.cite.split(" ") : [];
     const types = [];
 
