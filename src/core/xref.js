@@ -71,6 +71,7 @@ function addDataCiteToTerms(results, conf) {
         return;
       }
       const { uri, spec: cite } = result;
+      conf.normativeReferences.add(cite); // make all normative for now. TODO.
       const path = uri.includes("/") ? uri.split("/", 1)[1] : uri;
       const [citePath, citeFrag] = path.split("#");
       Object.assign(elem.dataset, { cite, citePath, citeFrag });
