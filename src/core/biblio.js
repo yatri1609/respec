@@ -372,6 +372,6 @@ export async function run(conf, doc, cb) {
   }
   Object.assign(conf.biblio, conf.localBiblio);
   bibref(conf);
-  finish();
   await updateFromNetwork(neededRefs);
+  finish();
 }
