@@ -7,7 +7,7 @@
 /*globals console*/
 import { biblioDB } from "core/biblio-db";
 import { createResourceHint, addId } from "core/utils";
-import { pub } from "core/pubsubhub";
+import { pub, sub } from "core/pubsubhub";
 
 export const name = "core/biblio";
 
@@ -112,7 +112,7 @@ export function stringifyReference(ref) {
   return output;
 }
 
-function bibref(conf) {
+function makeBibliography(conf) {
   // this is in fact the bibref processing portion
   const {
     informativeReferences: informs,
@@ -269,7 +269,10 @@ export const done = new Promise(resolve => {
   doneResolver = resolve;
 });
 
-async function updateFromNetwork(refs, options = { forceUpdate: false }) {
+export async function updateFromNetwork(
+  refs,
+  options = { forceUpdate: false }
+) {
   // Update database if needed, if we are online
   if (!refs.length || navigator.onLine === false) {
     return;
@@ -371,7 +374,9 @@ export async function run(conf, doc, cb) {
     Object.assign(conf.biblio, data);
   }
   Object.assign(conf.biblio, conf.localBiblio);
-  bibref(conf);
   await updateFromNetwork(neededRefs);
   finish();
+  sub("end-all", () => {
+    makeBibliography(conf);
+  });
 }
