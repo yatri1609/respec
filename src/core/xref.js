@@ -69,8 +69,17 @@ function addDataCiteToTerms(results, conf) {
         console.warn(`No data for `, elem);
         return;
       }
-      const { uri, spec: cite } = result;
-      conf.normativeReferences.add(cite); // make all normative for now. TODO.
+      const { uri, spec: cite, normative } = result;
+      if (normative == true) {
+        conf.normativeReferences.add(cite);
+      } else {
+        if (elem.closest(".informative")) {
+          conf.informativeReferences.add(cite);
+        } else {
+          const msg = "Adding informative reference to normative section";
+          console.warn(msg, entry);
+        }
+      }
       const path = uri.includes("/") ? uri.split("/", 1)[1] : uri;
       const [citePath, citeFrag] = path.split("#");
       Object.assign(elem.dataset, { cite, citePath, citeFrag });
