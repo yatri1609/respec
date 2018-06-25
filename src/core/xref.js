@@ -6,8 +6,7 @@ export async function main(conf, possibleExternalLinks) {
   conf.xrefs = getRefMap(possibleExternalLinks);
   const query = createXrefQuery(conf.xrefs);
   const results = await fetchXrefs(query);
-  const badRefs = addDataCiteToTerms(results, conf);
-  return badRefs;
+  addDataCiteToTerms(results, conf);
 }
 
 // returns possible external refs as Map(term, [{elem, specs, types}])
@@ -61,13 +60,13 @@ function disambiguate(data, context) {
 // on elem from conf.xref[term] for which results are found.
 // unresolvable refs are returned as badRefs
 function addDataCiteToTerms(results, conf) {
-  const badRefs = [];
   for (const term in results) {
     conf.xrefs.get(term).forEach(entry => {
       const { elem } = entry;
       const result = disambiguate(results[term], entry);
       if (!result) {
-        badRefs.push(entry.elem);
+        elem.classList.add("respec-offending-element");
+        console.warn(`No data for `, elem);
         return;
       }
       const { uri, spec: cite } = result;
@@ -77,7 +76,6 @@ function addDataCiteToTerms(results, conf) {
       Object.assign(elem.dataset, { cite, citePath, citeFrag });
     });
   }
-  return badRefs;
 }
 
 // just a network simulation for prototype ignore.

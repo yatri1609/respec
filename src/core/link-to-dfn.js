@@ -122,11 +122,7 @@ export async function run(conf, doc, cb) {
       $ant.replaceWith($ant.contents());
     }
   });
-  const badRefs = await addExternalReferences(conf, possibleExternalLinks);
-  badRefs.forEach(elem => {
-    elem.classList.add("respec-offending-element");
-    console.warn(`No data for `, elem);
-  });
+  await addExternalReferences(conf, possibleExternalLinks);
   linkInlineCitations(doc, conf).then(() => {
     // Added message for legacy compat with Aria specs
     // See https://github.com/w3c/respec/issues/793
