@@ -1,7 +1,3 @@
-// PRESENT ISSUES:
-// looks good. doesn't work.
-
-// main
 export async function main(conf, possibleExternalLinks) {
   conf.xrefs = getRefMap(possibleExternalLinks);
   const query = createXrefQuery(conf.xrefs);
@@ -58,7 +54,6 @@ function disambiguate(data, context) {
 
 // adds data-cite attributes to terms
 // on elem from conf.xref[term] for which results are found.
-// unresolvable refs are returned as badRefs
 function addDataCiteToTerms(results, conf) {
   for (const term in results) {
     conf.xrefs.get(term).forEach(entry => {
