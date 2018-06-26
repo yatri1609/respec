@@ -1,3 +1,5 @@
+import { norm } from "core/utils";
+
 export async function main(conf, possibleExternalLinks) {
   conf.xrefs = getRefMap(possibleExternalLinks);
   const query = createXrefQuery(conf.xrefs);
@@ -9,11 +11,10 @@ export async function main(conf, possibleExternalLinks) {
 function getRefMap(elems) {
   return elems.reduce((xrefs, elem) => {
     let term = "xref" in elem.dataset ? elem.dataset.xref : elem.textContent;
-    term = term.trim();
+    term = norm(term);
     const datacite = elem.closest("[data-cite]");
     const specs = datacite ? datacite.dataset.cite.split(" ") : [];
     const types = [];
-
     const xrefsForTerm = xrefs.has(term) ? xrefs.get(term) : [];
     xrefsForTerm.push({ elem, specs, types });
     return xrefs.set(term, xrefsForTerm);
@@ -43,13 +44,18 @@ async function fetchXrefs(query) {
 // disambiguate fetched results based on xref{specs,types} i.e. context
 function disambiguate(data, context) {
   if (!data || !data.length) return null;
+  const { elem, specs } = context;
   if (data.length === 1) {
-    if (context.specs.length && !context.specs.includes(data[0].spec)) {
+    if (specs.length && !specs.includes(data[0].spec)) {
+      elem.classList.add("respec-offending-element");
+      console.warn(`No data for `, elem);
       return null;
     }
     return data[0]; // unambiguous
   }
-  return data[0]; // todo
+  console.warn("Ambiguity in data for", elem); // todo
+  elem.classList.add("respec-offending-element");
+  return null;
 }
 
 // adds data-cite attributes to terms
@@ -60,8 +66,6 @@ function addDataCiteToTerms(results, conf) {
       const { elem } = entry;
       const result = disambiguate(results[term], entry);
       if (!result) {
-        elem.classList.add("respec-offending-element");
-        console.warn(`No data for `, elem);
         return;
       }
       const { uri, spec: cite, normative } = result;
