@@ -487,7 +487,7 @@
       "spec": "webidl",
       "type": "dfn",
       "normative": true,
-      "uri": "#default-tojson-operation",
+      "uri": "#default-tojson-operation"
     }
   ],
   "constructor": [
