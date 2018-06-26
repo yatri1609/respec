@@ -8,7 +8,7 @@
     }
   ],
   "event handler": [
-    {
+      {
       "spec": "html",
       "type": "dfn",
       "normative": true,
@@ -152,6 +152,1383 @@
       "type": "interface",
       "normative": true,
       "uri": "#request"
+    }
+  ],
+  "responsible document": [
+    {
+      "spec": "html",
+      "type": "dfn",
+      "normative": true,
+      "uri": "webappapis.html#responsible-document"
+    }
+  ],
+  "relevant global object": [
+    {
+      "spec": "html",
+      "type": "dfn",
+      "normative": true,
+      "uri": "webappapis.html#concept-relevant-global"
+    }
+  ],
+  "associated Document": [
+    {
+      "spec": "html",
+      "type": "dfn",
+      "normative": true,
+      "uri": "window-object.html#concept-document-window"
+    }
+  ],
+  "fully active": [
+    {
+      "spec": "html",
+      "type": "dfn",
+      "for": [
+        "Document"
+      ],
+      "normative": true,
+      "uri": "browsers.html#fully-active"
+    }
+  ],
+  "exception": [
+    {
+      "spec": "webidl",
+      "type": "dfn",
+      "normative": true,
+      "uri": "#dfn-exception",
+      "comment": "export is not true at shepherd but true in bikeshed and current spec"
+    }
+  ],
+  "language": [
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "TextTrack"
+      ],
+      "normative": true,
+      "uri": "media.html#dom-texttrack-language"
+    },
+    {
+      "type": "element-attr",
+      "spec": "html",
+      "normative": true,
+      "uri": "form-control-infrastructure.html#attr-fe-autocomplete-language"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "NavigatorLanguage"
+      ],
+      "normative": true,
+      "uri": "system-state.html#dom-navigator-language"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "normative": true,
+      "uri": "obsolete.html#attr-script-language"
+    }
+  ],
+  "target": [
+    {
+      "spec": "css-animations",
+      "type": "argument",
+      "for": [
+        "CSSAnimation/CSSAnimation(target, animationName, options, defaultEasing)"
+      ],
+      "normative": true,
+      "uri": "#dom-cssanimation-cssanimation-target-animationname-options-defaulteasing-target"
+    },
+    {
+      "spec": "css-animations",
+      "type": "argument",
+      "for": [
+        "CSSAnimation/CSSAnimation(target, animationName, options, defaultEasing, timeline)"
+      ],
+      "normative": true,
+      "uri": "#dom-cssanimation-cssanimation-target-animationname-options-defaulteasing-timeline-target"
+    },
+    {
+      "spec": "css-transitions",
+      "type": "argument",
+      "for": [
+        "CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options)"
+      ],
+      "normative": true,
+      "uri": "#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-target"
+    },
+    {
+      "spec": "css-transitions",
+      "type": "argument",
+      "for": [
+        "CSSTransition/CSSTransition(target, transitionProperty, transitionValue, options, timeline)"
+      ],
+      "normative": true,
+      "uri": "/#dom-csstransition-csstransition-target-transitionproperty-transitionvalue-options-timeline-target"
+    },
+    {
+      "spec": "dom",
+      "type": "attribute",
+      "for": [
+        "Event"
+      ],
+      "normative": true,
+      "uri": "#dom-event-target"
+    },
+    {
+      "spec": "dom",
+      "type": "dfn",
+      "for": [
+        "Event"
+      ],
+      "normative": true,
+      "uri": "#event-target"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "MutationObserver/observe(target, options)",
+        "MutationObserver/observe(target)"
+      ],
+      "normative": true,
+      "uri": "#dom-mutationobserver-observe-target-options-target"
+    },
+    {
+      "spec": "dom",
+      "type": "attribute",
+      "normative": true,
+      "for": [
+        "MutationRecord"
+      ],
+      "uri": "#dom-mutationrecord-target"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "normative": true,
+      "for": [
+        "Document/createProcessingInstruction(target, data)"
+      ],
+      "uri": "#dom-document-createprocessinginstruction-target-data-target"
+    },
+    {
+      "spec": "dom",
+      "type": "dfn",
+      "normative": true,
+      "for": [
+        "ProcessingInstruction"
+      ],
+      "uri": "#concept-pi-target"
+    },
+    {
+      "spec": "dom",
+      "type": "attribute",
+      "normative": true,
+      "for": [
+        "ProcessingInstruction"
+      ],
+      "uri": "#dom-processinginstruction-target"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "base"
+      ],
+      "normative": true,
+      "uri": "semantics.html#attr-base-target"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLBaseElement"
+      ],
+      "normative": true,
+      "uri": "semantics.html#dom-base-target"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLAnchorElement"
+      ],
+      "normative": true,
+      "uri": "text-level-semantics.html#dom-a-target"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "normative": true,
+      "uri": "links.html#attr-hyperlink-target"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLAreaElement"
+      ],
+      "normative": true,
+      "uri": "image-maps.html#dom-area-target"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "normative": true,
+      "uri": "form-control-infrastructure.html#attr-fs-target"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLFormElement"
+      ],
+      "normative": true,
+      "uri": "form-control-infrastructure.html#dom-fs-target"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "normative": true,
+      "uri": "obsolete.html#attr-link-target"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLLinkElement"
+      ],
+      "normative": true,
+      "uri": "obsolete.html#dom-link-target"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "normative": true,
+      "for": [
+        "a"
+      ],
+      "uri": "linking.html#AElementTargetAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "attribute",
+      "normative": true,
+      "uri": "linking.html#AElementTargetAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "a"
+      ],
+      "normative": true,
+      "uri": "linking.html#AElementTargetAttribute"
+    },
+    {
+      "spec": "web-animations",
+      "type": "argument",
+      "for": [
+        "KeyframeEffect/KeyframeEffect(target, keyframes, options)"
+      ],
+      "normative": true,
+      "uri": "#dom-keyframeeffect-keyframeeffect-target-keyframes-options-target"
+    },
+    {
+      "spec": "web-animations",
+      "type": "attribute",
+      "for": [
+        "KeyframeEffect"
+      ],
+      "normative": true,
+      "uri": "#dom-keyframeeffect-target"
+    },
+    {
+      "spec": "web-animations",
+      "type": "argument",
+      "for": [
+        "KeyframeEffectReadOnly/KeyframeEffectReadOnly(target, keyframes, options)"
+      ],
+      "normative": true,
+      "uri": "#dom-keyframeeffectreadonly-keyframeeffectreadonly-target-keyframes-options-target"
+    },
+    {
+      "spec": "web-animations",
+      "type": "attribute",
+      "for": [
+        "KeyframeEffectReadOnly"
+      ],
+      "normative": true,
+      "uri": "#dom-keyframeeffectreadonly-target"
+    },
+    {
+      "spec": "web-animations",
+      "type": "argument",
+      "for": [
+        "KeyframeEffect/KeyframeEffect(target, keyframes, options)"
+      ],
+      "normative": true,
+      "uri": "#dom-keyframeeffect-keyframeeffect-target-keyframes-options-target"
+    },
+    {
+      "spec": "web-animations",
+      "type": "attribute",
+      "for": [
+        "KeyframeEffect"
+      ],
+      "normative": true,
+      "uri": "#dom-keyframeeffect-target"
+    }
+  ],
+  "default toJSON operation": [
+    {
+      "spec": "webidl",
+      "type": "dfn",
+      "normative": true,
+      "uri": "#default-tojson-operation",
+    }
+  ],
+  "constructor": [
+    {
+      "spec": "dom",
+      "type": "dfn",
+      "for": [
+        "Event"
+      ],
+      "normative": true,
+      "uri": "#concept-event-constructor"
+    }
+  ],
+  "create an event": [
+    {
+      "spec": "dom",
+      "type": "dfn",
+      "normative": true,
+      "linking_text": [
+        "creating an event",
+        "create an event"
+      ],
+      "comment": "linking_text as alias to title",
+      "uri": "#concept-event-create"
+    }
+  ],
+  "type": [
+    {
+      "spec": "credential-management",
+      "type": "attribute",
+      "for": [
+        "Credential"
+      ],
+      "normative": true,
+      "uri": "#dom-credential-type"
+    },
+    {
+      "spec": "csp",
+      "type": "argument",
+      "for": [
+        "SecurityPolicyViolationEvent/SecurityPolicyViolationEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-securitypolicyviolationevent-securitypolicyviolationevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "css-animations",
+      "type": "argument",
+      "for": [
+        "AnimationEvent/AnimationEvent(type, animationEventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-animationevent-animationevent-type-animationeventinitdict-type"
+    },
+    {
+      "spec": "css-font-loading",
+      "type": "argument",
+      "for": [
+        "CSSFontFaceLoadEvent/CSSFontFaceLoadEvent()"
+      ],
+      "normative": true,
+      "uri": "#dom-cssfontfaceloadeventcssfontfaceloadevent-type"
+    },
+    {
+      "spec": "css-font-loading",
+      "type": "argument",
+      "for": [
+        "FontFaceSetLoadEvent/FontFaceSetLoadEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-fontfacesetloadevent-fontfacesetloadevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "css-pseudo",
+      "type": "attribute",
+      "for": [
+        "CSSPseudoElement"
+      ],
+      "normative": true,
+      "uri": "#dom-csspseudoelement-type"
+    },
+    {
+      "spec": "css-pseudo",
+      "type": "argument",
+      "for": [
+        "CSSPseudoElementList/getByType(type)"
+      ],
+      "normative": true,
+      "uri": "#dom-csspseudoelementlist-getbytype-type-type"
+    },
+    {
+      "spec": "css-pseudo",
+      "type": "argument",
+      "for": [
+        "Window/getPseudoElements(elt, type)"
+      ],
+      "normative": true,
+      "uri": "#dom-window-getpseudoelements-elt-type-type"
+    },
+    {
+      "spec": "css-transitions",
+      "type": "argument",
+      "for": [
+        "TransitionEvent/TransitionEvent(type, transitionEventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-transitionevent-transitionevent-type-transitioneventinitdict-type"
+    },
+    {
+      "spec": "css-typed-om",
+      "type": "dfn",
+      "for": [
+        "CSSNumericValue"
+      ],
+      "normative": true,
+      "uri": "#cssnumericvalue-type"
+    },
+    {
+      "spec": "cssom",
+      "type": "attribute",
+      "for": [
+        "StyleSheet"
+      ],
+      "normative": true,
+      "uri": "#dom-stylesheet-type"
+    },
+    {
+      "spec": "cssom",
+      "type": "attribute",
+      "for": [
+        "CSSRule"
+      ],
+      "normative": true,
+      "uri": "#dom-cssrule-type"
+    },
+    {
+      "spec": "cssom-values",
+      "type": "dfn",
+      "for": [
+        "CSSNumericValue"
+      ],
+      "normative": true,
+      "uri": "#cssnumericvalue-type"
+    },
+    {
+      "spec": "cssom-view",
+      "type": "argument",
+      "for": [
+        "MediaQueryListEvent/MediaQueryListEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-mediaquerylistevent-mediaquerylistevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "Event/Event(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-event-event-type-eventinitdict-type"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "Event/initEvent(type, bubbles, cancelable)",
+        "Event/initEvent(type, bubbles)",
+        "Event/initEvent(type)"
+      ],
+      "normative": true,
+      "uri": "#dom-event-initevent-type-bubbles-cancelable-type"
+    },
+    {
+      "spec": "dom",
+      "type": "attribute",
+      "for": [
+        "Event"
+      ],
+      "normative": true,
+      "uri": "#dom-event-type"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "CustomEvent/CustomEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-customevent-customevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "CustomEvent/initCustomEvent(type, bubbles, cancelable, detail)",
+        "CustomEvent/initCustomEvent(type, bubbles, cancelable)",
+        "CustomEvent/initCustomEvent(type, bubbles)",
+        "CustomEvent/initCustomEvent(type)"
+      ],
+      "normative": true,
+      "uri": "#dom-customevent-initcustomevent-type-bubbles-cancelable-detail-type"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "EventTarget/addEventListener(type, callback, options)",
+        "EventTarget/addEventListener(type, callback)"
+      ],
+      "normative": true,
+      "uri": "#dom-eventtarget-addeventlistener-type-callback-options-type"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "EventTarget/removeEventListener(type, callback, options)",
+        "EventTarget/removeEventListener(type, callback)"
+      ],
+      "normative": true,
+      "uri": "#dom-eventtarget-removeeventlistener-type-callback-options-type"
+    },
+    {
+      "spec": "dom",
+      "type": "attribute",
+      "for": [
+        "MutationRecord"
+      ],
+      "normative": true,
+      "uri": "#dom-mutationrecord-type"
+    },
+    {
+      "spec": "dom",
+      "type": "dfn",
+      "for": [
+        "Document"
+      ],
+      "normative": true,
+      "uri": "#concept-document-type"
+    },
+    {
+      "spec": "fetch",
+      "type": "dfn",
+      "for": [
+        "response"
+      ],
+      "normative": true,
+      "uri": "#concept-response-type"
+    },
+    {
+      "spec": "fetch",
+      "type": "attribute",
+      "for": [
+        "Response"
+      ],
+      "normative": true,
+      "uri": "#dom-response-type"
+    },
+    {
+      "spec": "fileapi",
+      "type": "dict-member",
+      "for": [
+        "BlobPropertyBag"
+      ],
+      "normative": true,
+      "uri": "#dfn-BPtype"
+    },
+    {
+      "spec": "fileapi",
+      "type": "attribute",
+      "for": [
+        "Blob"
+      ],
+      "normative": true,
+      "uri": "#dfn-type"
+    },
+    {
+      "spec": "filter-effects",
+      "type": "element-attr",
+      "for": [
+        "feColorMatrix"
+      ],
+      "normative": true,
+      "uri": "#element-attrdef-fecolormatrix-type"
+    },
+    {
+      "spec": "filter-effects",
+      "type": "element-attr",
+      "for": [
+        "feComponentTransfer"
+      ],
+      "normative": true,
+      "uri": "#element-attrdef-fecomponenttransfer-type"
+    },
+    {
+      "spec": "filter-effects",
+      "type": "element-attr",
+      "for": [
+        "feTurbulence"
+      ],
+      "normative": true,
+      "uri": "#element-attrdef-feturbulence-type"
+    },
+    {
+      "spec": "filter-effects",
+      "type": "attribute",
+      "for": [
+        "SVGComponentTransferFunctionElement"
+      ],
+      "normative": true,
+      "uri": "#dom-svgcomponenttransferfunctionelement-type"
+    },
+    {
+      "spec": "filter-effects",
+      "type": "attribute",
+      "for": [
+        "SVGFEColorMatrixElement"
+      ],
+      "normative": true,
+      "uri": "#dom-svgfecolormatrixelement-type"
+    },
+    {
+      "spec": "filter-effects",
+      "type": "attribute",
+      "for": [
+        "SVGFETurbulenceElement"
+      ],
+      "normative": true,
+      "uri": "#dom-svgfeturbulenceelement-type"
+    },
+    {
+      "spec": "generic-sensor",
+      "type": "argument",
+      "for": [
+        "SensorErrorEvent/SensorErrorEvent(type, errorEventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-sensorerrorevent-sensorerrorevent-type-erroreventinitdict-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "link"
+      ],
+      "normative": true,
+      "uri": "semantics.html#attr-link-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLLinkElement"
+      ],
+      "normative": true,
+      "uri": "semantics.html#dom-link-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "ol"
+      ],
+      "normative": true,
+      "uri": "grouping-content.html#attr-ol-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLOListElement"
+      ],
+      "normative": true,
+      "uri": "grouping-content.html#dom-ol-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLAnchorElement"
+      ],
+      "normative": true,
+      "uri": "text-level-semantics.html#dom-a-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "links.html#attr-hyperlink-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "source"
+      ],
+      "normative": true,
+      "uri": "embedded-content.html#attr-source-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLSourceElement"
+      ],
+      "normative": true,
+      "uri": "embedded-content.html#dom-source-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "embed"
+      ],
+      "normative": true,
+      "uri": "iframe-embed-object.html#attr-embed-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLEmbedElement"
+      ],
+      "normative": true,
+      "uri": "iframe-embed-object.html#dom-embed-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "object"
+      ],
+      "normative": true,
+      "uri": "iframe-embed-object.html#attr-object-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLObjectElement"
+      ],
+      "normative": true,
+      "uri": "iframe-embed-object.html#dom-object-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "input"
+      ],
+      "normative": true,
+      "uri": "input.html#attr-input-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLInputElement"
+      ],
+      "normative": true,
+      "uri": "input.html#dom-input-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [
+        "button"
+      ],
+      "normative": true,
+      "uri": "form-elements.html#attr-button-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLButtonElement"
+      ],
+      "normative": true,
+      "uri": "form-elements.html#dom-button-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLSelectElement"
+      ],
+      "normative": true,
+      "uri": "form-elements.html#dom-select-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLTextAreaElement"
+      ],
+      "normative": true,
+      "uri": "form-elements.html#dom-textarea-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLOutputElement"
+      ],
+      "normative": true,
+      "uri": "form-elements.html#dom-output-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLFieldSetElement"
+      ],
+      "normative": true,
+      "uri": "form-elements.html#dom-fieldset-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "scripting.html#attr-script-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLScriptElement"
+      ],
+      "normative": true,
+      "uri": "scripting.html#dom-script-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "DataTransferItem"
+      ],
+      "normative": true,
+      "uri": "dnd.html#dom-datatransferitem-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "MimeType"
+      ],
+      "normative": true,
+      "uri": "system-state.html#dom-mimetype-type"
+    },
+    {
+      "spec": "html",
+      "type": "dfn",
+      "for": [
+        "WorkerGlobalScope"
+      ],
+      "normative": true,
+      "uri": "workers.html#concept-workerglobalscope-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "obsolete.html#attr-area-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "obsolete.html#attr-li-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "obsolete.html#attr-menu-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "obsolete.html#attr-param-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "obsolete.html#attr-style-type"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "obsolete.html#attr-ul-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLLIElement"
+      ],
+      "normative": true,
+      "uri": "obsolete.html#dom-li-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLParamElement"
+      ],
+      "normative": true,
+      "uri": "obsolete.html#dom-param-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLStyleElement"
+      ],
+      "normative": true,
+      "uri": "obsolete.html#dom-style-type"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLUListElement"
+      ],
+      "normative": true,
+      "uri": "obsolete.html#dom-ul-type"
+    },
+    {
+      "spec": "indexeddb",
+      "type": "argument",
+      "for": [
+        "IDBVersionChangeEvent/IDBVersionChangeEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-idbversionchangeevent-idbversionchangeevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "mimesniff",
+      "type": "dfn",
+      "for": [
+        "MIME type"
+      ],
+      "normative": true,
+      "uri": "#type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "dfn",
+      "for": [
+        "service worker"
+      ],
+      "normative": true,
+      "uri": "#dfn-type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "dict-member",
+      "for": [
+        "RegistrationOptions"
+      ],
+      "normative": true,
+      "uri": "#dom-registrationoptions-type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "attribute",
+      "for": [
+        "Client"
+      ],
+      "normative": true,
+      "uri": "#dom-client-type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "dict-member",
+      "for": [
+        "ClientQueryOptions"
+      ],
+      "normative": true,
+      "uri": "#dom-clientqueryoptions-type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "argument",
+      "for": [
+        "ExtendableEvent/ExtendableEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-extendableevent-extendableevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "argument",
+      "for": [
+        "FetchEvent/FetchEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-fetchevent-fetchevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "argument",
+      "for": [
+        "ExtendableMessageEvent/ExtendableMessageEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-extendablemessageevent-extendablemessageevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "service-workers",
+      "type": "dfn",
+      "for": [
+        "cache batch operation"
+      ],
+      "normative": true,
+      "uri": "#dfn-cache-batch-operation-type"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "style"
+      ],
+      "normative": true,
+      "uri": "styling.html#StyleElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "feColorMatrix"
+      ],
+      "normative": true,
+      "uri": "filters.html#feColorMatrixTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "feComponentTransfer"
+      ],
+      "normative": true,
+      "uri": "filters.html#feComponentTransferTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "feTurbulence"
+      ],
+      "normative": true,
+      "uri": "filters.html#feTurbulenceTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "script"
+      ],
+      "normative": true,
+      "uri": "script.html#ScriptElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "animateTransform"
+      ],
+      "normative": true,
+      "uri": "animate.html#AnimateTransformElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "attribute",
+      "for": [],
+      "normative": true,
+      "uri": "styling.html#StyleElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [],
+      "normative": true,
+      "uri": "pservers.html#MeshGradientElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "attribute",
+      "for": [],
+      "normative": true,
+      "uri": "interact.html#ScriptElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "attribute",
+      "for": [],
+      "normative": true,
+      "uri": "linking.html#AElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "script"
+      ],
+      "normative": true,
+      "uri": "interact.html#ScriptElementTypeAttribute"
+    },
+    {
+      "spec": "svg",
+      "type": "element-attr",
+      "for": [
+        "a"
+      ],
+      "normative": true,
+      "uri": "linking.html#AElementTypeAttribute"
+    },
+    {
+      "spec": "ui-events",
+      "type": "argument",
+      "for": [
+        "UIEvent/UIEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-uievent-uievent-type-eventinitdict-type"
+    },
+    {
+      "spec": "ui-events",
+      "type": "argument",
+      "for": [
+        "FocusEvent/FocusEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-focusevent-focusevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "ui-events",
+      "type": "argument",
+      "for": [
+        "MouseEvent/MouseEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-mouseevent-mouseevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "ui-events",
+      "type": "argument",
+      "for": [
+        "WheelEvent/WheelEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-wheelevent-wheelevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "ui-events",
+      "type": "argument",
+      "for": [
+        "InputEvent/InputEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-inputevent-inputevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "ui-events",
+      "type": "argument",
+      "for": [
+        "KeyboardEvent/KeyboardEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-keyboardevent-keyboardevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "ui-events",
+      "type": "argument",
+      "for": [
+        "CompositionEvent/CompositionEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-compositionevent-compositionevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "web-animations",
+      "type": "argument",
+      "for": [
+        "AnimationPlaybackEvent/AnimationPlaybackEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-animationplaybackevent-animationplaybackevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "web-background-sync",
+      "type": "argument",
+      "for": [
+        "SyncEvent/SyncEvent(type, init)"
+      ],
+      "normative": true,
+      "uri": "#dom-syncevent-syncevent-type-init-type"
+    },
+    {
+      "spec": "web-bluetooth",
+      "type": "argument",
+      "for": [
+        "ValueEvent/ValueEvent(type, initDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-valueevent-valueevent-type-initdict-type"
+    },
+    {
+      "spec": "web-bluetooth",
+      "type": "argument",
+      "for": [
+        "BluetoothAdvertisingEvent/BluetoothAdvertisingEvent(type, init)"
+      ],
+      "normative": true,
+      "uri": "#dom-bluetoothadvertisingevent-bluetoothadvertisingevent-type-init-type"
+    },
+    {
+      "spec": "webauthn",
+      "type": "dict-member",
+      "for": [
+        "PublicKeyCredentialParameters"
+      ],
+      "normative": true,
+      "uri": "#dom-publickeycredentialparameters-type"
+    },
+    {
+      "spec": "webauthn",
+      "type": "dict-member",
+      "for": [
+        "CollectedClientData"
+      ],
+      "normative": true,
+      "uri": "#dom-collectedclientdata-type"
+    },
+    {
+      "spec": "webauthn",
+      "type": "dict-member",
+      "for": [
+        "PublicKeyCredentialDescriptor"
+      ],
+      "normative": true,
+      "uri": "#dom-publickeycredentialdescriptor-type"
+    },
+    {
+      "spec": "webusb",
+      "type": "argument",
+      "for": [
+        "USBConnectionEvent/USBConnectionEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-usbconnectionevent-usbconnectionevent-type-eventinitdict-type"
+    },
+    {
+      "spec": "webusb",
+      "type": "attribute",
+      "for": [
+        "USBEndpoint"
+      ],
+      "normative": true,
+      "uri": "#dom-usbendpoint-type"
+    },
+    {
+      "spec": "worklets",
+      "type": "argument",
+      "for": [
+        "FakeWorkletGlobalScope/registerAnArbitaryClass(type, classConstructor)"
+      ],
+      "normative": true,
+      "uri": "#dom-fakeworkletglobalscope-registeranarbitaryclass-type-classconstructor-type"
+    },
+    {
+      "spec": "xhr",
+      "type": "argument",
+      "for": [
+        "ProgressEvent/ProgressEvent(type, eventInitDict)"
+      ],
+      "normative": true,
+      "uri": "#dom-progressevent-progressevent-type-eventinitdict-type"
+    }
+  ],
+  "dispatch": [
+    {
+      "spec": "dom",
+      "type": "dfn",
+      "normative": true,
+      "uri": "#concept-event-dispatch"
+    }
+  ],
+  "queue a task": [
+    {
+      "spec": "html",
+      "type": "dfn",
+      "normative": true,
+      "uri": "webappapis.html#queue-a-task"
+    }
+  ],
+  "fetch": [
+    {
+      "spec": "fetch",
+      "type": "dfn",
+      "for": [
+        "fetch record"
+      ],
+      "normative": true,
+      "uri": "https://fetch.spec.whatwg.org/#concept-fetch-record-fetch"
+    },
+    {
+      "spec": "fetch",
+      "type": "dfn",
+      "normative": true,
+      "uri": "https://fetch.spec.whatwg.org/#concept-fetch"
+    },
+    {
+      "spec": "service-workers",
+      "type": "event",
+      "for": [
+        "ServiceWorkerGlobalScope"
+      ],
+      "normative": true,
+      "uri": "https://www.w3.org/TR/service-workers-1/#service-worker-global-scope-fetch-event"
+    },
+    {
+      "spec": "service-workers",
+      "type": "event",
+      "for": [
+        "ServiceWorkerGlobalScope"
+      ],
+      "normative": true,
+      "uri": "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-fetch-event"
     }
   ]
 }
