@@ -97,7 +97,12 @@ async function simulateShepherd(query) {
     result[term] = result[term] || [];
     if (term in data) {
       for (const item of data[term]) {
-        if (filterFn(item, key)) result[term].push(item);
+        if (
+          filterFn(item, key) &&
+          !result[term].find(t => t.uri === item.uri)
+        ) {
+          result[term].push(item);
+        }
       }
     }
   }
