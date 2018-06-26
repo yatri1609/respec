@@ -1,10 +1,13 @@
 import { norm } from "core/utils";
+import "deps/hyperhtml";
 
 export async function main(conf, possibleExternalLinks) {
+  // storing global only for testing
   conf.xrefs = getRefMap(possibleExternalLinks);
   const query = createXrefQuery(conf.xrefs);
   const results = await fetchXrefs(query);
   addDataCiteToTerms(results, conf);
+  showDependencies(conf.dependencies);
 }
 
 // returns possible external refs as Map(term, [{elem, specs, types}])
@@ -61,6 +64,7 @@ function disambiguate(data, context) {
 // adds data-cite attributes to terms
 // on elem from conf.xref[term] for which results are found.
 function addDataCiteToTerms(results, conf) {
+  const dependencies = new Map();
   for (const term in results) {
     conf.xrefs.get(term).forEach(entry => {
       const { elem } = entry;
@@ -68,7 +72,7 @@ function addDataCiteToTerms(results, conf) {
       if (!result) {
         return;
       }
-      const { uri, spec: cite, normative } = result;
+      const { uri, spec: cite, normative, type } = result;
       if (normative == true) {
         conf.normativeReferences.add(cite);
       } else {
@@ -82,8 +86,18 @@ function addDataCiteToTerms(results, conf) {
       const path = uri.includes("/") ? uri.split("/", 1)[1] : uri;
       const [citePath, citeFrag] = path.split("#");
       Object.assign(elem.dataset, { cite, citePath, citeFrag });
+
+      // add dependencies list
+      const termsInSpec = dependencies.has(cite)
+        ? dependencies.get(cite)
+        : new Map();
+      if (!termsInSpec.has(term)) {
+        termsInSpec.set(term, { term, uri, elem, type });
+      }
+      dependencies.set(cite, termsInSpec);
     });
   }
+  conf.dependencies = dependencies;
 }
 
 // just a network simulation for prototype ignore.
@@ -117,5 +131,34 @@ async function simulateShepherd(query) {
       valid = valid && types.includes(item.type);
     }
     return valid;
+  }
+}
+
+function showDependencies(deps) {
+  const section = hyperHTML`
+    <section id="generated-dependencies">
+      <h2 id="h1-generated-dependencies">Generated dependencies</h2>
+      <p>This specification relies on several other underlying specifications.</p>
+      <dl>
+        ${[...deps.entries()].map(render)}
+      </dl>
+    </section>
+  `;
+  document.body.appendChild(section);
+
+  function render([spec, entries]) {
+    const terms = [...entries.values()];
+    return hyperHTML`
+      <dt>${spec}</dt>
+      <dd>
+        ${terms.map(
+          term => hyperHTML`
+            <dfn
+              data-cite="${spec}"
+              data-cite-path="${term.uri}"
+            >${term.term}</dfn>, `
+        )}
+      </dd>
+    `;
   }
 }
