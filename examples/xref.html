@@ -629,8 +629,7 @@
         <ol data-link-for="PaymentDetailsBase" class="algorithm">
           <li data-tests=
           "active-document-cross-origin.https.sub.html, active-document-same-origin.https.html, removing-allowpaymentrequest.https.sub.html, setting-allowpaymentrequest-timing.https.sub.html, setting-allowpaymentrequest.https.sub.html">
-          If the <a>current settings object</a>'s <a data-cite=
-          "!HTML#responsible-document">responsible document</a> is not
+          If the <a>current settings object</a>'s <a>responsible document</a> is not
           <a>allowed to use</a> the feature indicated by attribute name
           <a>allowpaymentrequest</a>, then <a>throw</a> a
           "<a>SecurityError</a>" <a>DOMException</a>.
@@ -905,12 +904,11 @@
           </li>
           <li>Let <var>request</var> be the <a>context object</a>.
           </li>
-          <li>Let <var>document</var> be <var>request</var>'s <a data-cite=
-          "!HTML#concept-relevant-global">relevant global object</a>'s
-          <a data-cite="!HTML#concept-document-window">associated Document</a>.
+          <li>Let <var>document</var> be <var>request</var>'s <a>relevant global object</a>'s
+          <a>associated Document</a>.
           </li>
           <li data-tests="rejects_if_not_active.https.html">If
-          <var>document</var> is not <a data-cite="!HTML#fully-active">fully
+          <var>document</var> is not <a>fully
           active</a>, then return <a>a promise rejected with</a> an
           "<a>AbortError</a>" <a>DOMException</a>.
           </li>
@@ -985,8 +983,7 @@
               "!WEBIDL#dfn-convert-ecmascript-to-idl-value">convert</a> to
               <a data-cite="!WEBIDL#idl-object">object</a>.
               </li>
-              <li>If conversion results in a <a data-cite=
-              "!WEBIDL#dfn-exception">exception</a> <var>error</var>:
+              <li>If conversion results in a <a>exception</a> <var>error</var>:
                 <ol>
                   <li>Reject <var>acceptPromise</var> with <var>error</var>.
                   </li>
@@ -1067,8 +1064,7 @@
               are triggered through interaction with the user interface.
             </p>
             <p data-test="rejects_if_not_active.https.html">
-              If <var>document</var> stops being <a data-cite=
-              "!HTML#fully-active">fully active</a> while the user interface is
+              If <var>document</var> stops being <a>fully active</a> while the user interface is
               being shown, or no longer is by the time this step is reached,
               then:
             </p>
@@ -1219,8 +1215,7 @@
               "!WEBIDL#dfn-convert-ecmascript-to-idl-value">convert</a> to
               <a data-cite="!WEBIDL#idl-object">object</a>.
               </li>
-              <li>If conversion results in an <a data-cite=
-              "!WEBIDL#dfn-exception">exception</a> <var>error</var>, reject
+              <li>If conversion results in an <a>exception</a> <var>error</var>, reject
               <var>promise</var> with <var>error</var> and terminate this
               algorithm.
               </li>
@@ -2428,8 +2423,7 @@
             <dfn>toJSON()</dfn> method
           </h2>
           <p>
-            When called, runs [[!WEBIDL]]'s <a data-cite=
-            "WEBIDL#default-tojson-operation">default toJSON operation</a>.
+            When called, runs [[!WEBIDL]]'s <a>default toJSON operation</a>.
           </p>
         </section>
         <section>
@@ -3186,11 +3180,11 @@
           </li>
           <li>Let <var>document</var> be <var>request</var>'s <a data-cite=
           "!HTML#concept-relevant-global">relevant global object</a>'s
-          <a data-cite="!HTML#concept-document-window">associated Document</a>.
+          <a>associated Document</a>.
           </li>
           <li data-tests=
           "payment-response/rejects_if_not_active-manual.https.html">If
-          <var>document</var> is not <a data-cite="!HTML#fully-active">fully
+          <var>document</var> is not <a>fully
           active</a>, then return <a>a promise rejected with</a> an
           "<a>AbortError</a>" <a>DOMException</a>.
           </li>
@@ -3218,7 +3212,7 @@
           </li>
           <li data-tests=
           "payment-request/payment-response/rejects_if_not_active-manual.https.html">
-          If <var>document</var> stops being <a data-cite="!HTML#fully-active">
+          If <var>document</var> stops being <a>
             fully active</a> while the user interface is being shown, or no
             longer is by the time this step is reached, then:
             <ol>
@@ -3335,8 +3329,7 @@
           <dfn>toJSON()</dfn> method
         </h2>
         <p>
-          When called, runs [[!WEBIDL]]'s <a data-cite=
-          "WEBIDL#default-tojson-operation">default toJSON operation</a>.
+          When called, runs [[!WEBIDL]]'s <a>default toJSON operation</a>.
         </p>
       </section>
       <section>
@@ -4028,15 +4021,14 @@
           further action. The <a>user agent</a> user interface SHOULD ensure
           that this never occurs.
           </li>
-          <li>Let <var>event</var> be the result of <a data-cite=
-          "!DOM#concept-event-create">creating an event</a> using
+          <li>Let <var>event</var> be the result of <a data-xref="create an event">creating an event</a> using
           <a>PaymentRequestUpdateEvent</a>.
           </li>
           <li>Initialize <var>event</var>'s <code><a data-cite=
           "!DOM#dom-event-type">type</a></code> attribute to <var>name</var>.
           </li>
           <li>
-            <a data-cite="!DOM#concept-event-dispatch">Dispatch</a>
+            <a data-xref="dispatch">Dispatch</a>
             <var>event</var> at <var>request</var>.
           </li>
           <li data-link-for="PaymentRequestUpdateEvent">If
@@ -4524,8 +4516,7 @@
           </h2>
           <p>
             To <dfn>abort the update</dfn> with a <a>PaymentRequest</a>
-            <var>request</var> and <a data-cite=
-            "!WEBIDL#dfn-exception">exception</a> <var>exception</var>:
+            <var>request</var> and <a>exception</a> <var>exception</var>:
           </p>
           <ol class="algorithm">
             <li>Optionally, show an error message to the user when letting them
