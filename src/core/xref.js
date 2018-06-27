@@ -14,7 +14,7 @@ export async function main(conf, possibleExternalLinks) {
 function getRefMap(elems) {
   return elems.reduce((xrefs, elem) => {
     let term = elem.dataset.xref || elem.textContent;
-    term = norm(term).toLowerCase();
+    term = norm(term);
     const datacite = elem.closest("[data-cite]");
     const specs = datacite ? datacite.dataset.cite.split(" ") : [];
     const types = [];
@@ -46,8 +46,12 @@ async function fetchXrefs(query) {
 
 // disambiguate fetched results based on xref{specs,types} i.e. context
 function disambiguate(data, context) {
-  if (!data || !data.length) return null;
   const { elem, specs } = context;
+  if (!data || !data.length) {
+    elem.classList.add("respec-offending-element");
+    console.warn(`No data for `, elem);
+    return null;
+  }
   if (data.length === 1) {
     if (specs.length && !specs.includes(data[0].spec)) {
       elem.classList.add("respec-offending-element");
