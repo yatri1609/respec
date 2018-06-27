@@ -15,6 +15,9 @@ function getRefMap(elems) {
   return elems.reduce((xrefs, elem) => {
     let term = elem.dataset.xref || elem.textContent;
     term = norm(term);
+    if (!isIDL(term)) {
+      term = term.toLowerCase();
+    }
     const datacite = elem.closest("[data-cite]");
     const specs = datacite ? datacite.dataset.cite.split(" ") : [];
     const types = [];
@@ -47,19 +50,22 @@ async function fetchXrefs(query) {
 // disambiguate fetched results based on xref{specs,types} i.e. context
 function disambiguate(data, context) {
   const { elem, specs } = context;
+
   if (!data || !data.length) {
     elem.classList.add("respec-offending-element");
     console.warn(`No data for `, elem);
     return null;
   }
+
   if (data.length === 1) {
     if (specs.length && !specs.includes(data[0].spec)) {
       elem.classList.add("respec-offending-element");
-      console.warn(`No data for `, elem);
+      console.warn(`No data (disambiguate.specs) for `, elem);
       return null;
     }
     return data[0]; // unambiguous
   }
+
   console.warn("Ambiguity in data for", elem); // todo
   elem.classList.add("respec-offending-element");
   return null;
@@ -123,6 +129,7 @@ async function simulateShepherd(query) {
         }
       }
     }
+    if (!result[term].length) delete result[term];
   }
   return result;
 
@@ -165,4 +172,10 @@ function showDependencies(deps) {
       </dd>
     `;
   }
+}
+
+// an ugly (and wrong) test to check if string is IDL.
+// done only for POC.
+function isIDL(term) {
+  return !term.includes(" ") && term[0] === term[0].toUpperCase();
 }
