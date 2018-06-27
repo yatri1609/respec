@@ -29,17 +29,13 @@ function getRefMap(elems) {
 
 // creates a body for POST request to API
 function createXrefQuery(xrefs) {
-  return [...xrefs.entries()].reduce(
-    (query, [term, refs]) => {
-      refs.reduce((keys, { specs, types }) => {
-        keys.push({ term, specs, types });
-        return keys;
-      }, query.keys);
-      return query;
-    },
-    { keys: [] }
-  );
-  // todo: return only unique
+  const queryKeys = [...xrefs.entries()].reduce((queryKeys, [term, refs]) => {
+    refs.forEach(({ specs, types }) => {
+      queryKeys.add(JSON.stringify({ term, specs, types })); // only unique
+    });
+    return queryKeys;
+  }, new Set());
+  return { keys: [...queryKeys].map(JSON.parse) };
 }
 
 // fetch from network
