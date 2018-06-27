@@ -499,6 +499,15 @@
       ],
       "normative": true,
       "uri": "#concept-event-constructor"
+    },
+    {
+      "spec": "html",
+      "type": "dfn",
+      "for": [
+        "custom element definition"
+      ],
+      "normative": true,
+      "uri": "custom-elements.html#concept-custom-element-definition-constructor"
     }
   ],
   "create an event": [
@@ -1529,6 +1538,14 @@
       ],
       "normative": true,
       "uri": "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-fetch-event"
+    }
+  ],
+  "current settings object": [
+    {
+      "spec": "html",
+      "type": "dfn",
+      "normative": true,
+      "uri": "webappapis.html#current-settings-object"
     }
   ]
 }
