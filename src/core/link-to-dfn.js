@@ -76,6 +76,8 @@ export async function run(conf, doc, cb) {
         const dfn = titles[target.title][target.for];
         if (dfn[0].dataset.cite) {
           $ant[0].dataset.cite = dfn[0].dataset.cite;
+        } else if ("xref" in dfn[0].dataset) {
+          possibleExternalLinks.push($ant[0]);
         } else {
           const frag = "#" + encodeURIComponent(dfn.prop("id"));
           $ant.attr("href", frag).addClass("internalDFN");
@@ -122,6 +124,7 @@ export async function run(conf, doc, cb) {
       $ant.replaceWith($ant.contents());
     }
   });
+  possibleExternalLinks.push(...doc.querySelectorAll(`dfn[data-xref]`));
   await addExternalReferences(conf, possibleExternalLinks);
   linkInlineCitations(doc, conf).then(() => {
     // Added message for legacy compat with Aria specs

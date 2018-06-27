@@ -13,7 +13,7 @@ export async function main(conf, possibleExternalLinks) {
 // returns possible external refs as Map(term, [{elem, specs, types}])
 function getRefMap(elems) {
   return elems.reduce((xrefs, elem) => {
-    let term = "xref" in elem.dataset ? elem.dataset.xref : elem.textContent;
+    let term = elem.dataset.xref || elem.textContent;
     term = norm(term);
     const datacite = elem.closest("[data-cite]");
     const specs = datacite ? datacite.dataset.cite.split(" ") : [];
