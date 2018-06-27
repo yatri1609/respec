@@ -1513,13 +1513,13 @@
         "fetch record"
       ],
       "normative": true,
-      "uri": "https://fetch.spec.whatwg.org/#concept-fetch-record-fetch"
+      "uri": "#concept-fetch-record-fetch"
     },
     {
       "spec": "fetch",
       "type": "dfn",
       "normative": true,
-      "uri": "https://fetch.spec.whatwg.org/#concept-fetch"
+      "uri": "#concept-fetch"
     },
     {
       "spec": "service-workers",
@@ -1528,16 +1528,7 @@
         "ServiceWorkerGlobalScope"
       ],
       "normative": true,
-      "uri": "https://www.w3.org/TR/service-workers-1/#service-worker-global-scope-fetch-event"
-    },
-    {
-      "spec": "service-workers",
-      "type": "event",
-      "for": [
-        "ServiceWorkerGlobalScope"
-      ],
-      "normative": true,
-      "uri": "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-fetch-event"
+      "uri": "#service-worker-global-scope-fetch-event"
     }
   ],
   "current settings object": [
@@ -1546,6 +1537,64 @@
       "type": "dfn",
       "normative": true,
       "uri": "webappapis.html#current-settings-object"
+    }
+  ],
+  "Event": [
+    {
+      "spec": "dom",
+      "type": "interface",
+      "normative": true,
+      "uri": "#event"
+    }
+  ],
+  "event": [
+    {
+      "spec": "dom",
+      "type": "dfn",
+      "normative": true,
+      "uri": "#concept-event"
+    },
+    {
+      "spec": "dom",
+      "type": "attribute",
+      "for": [
+        "Window"
+      ],
+      "normative": true,
+      "uri": "#dom-window-event"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "EventListener/handleEvent(event)"
+      ],
+      "normative": true,
+      "uri": "#dom-eventlistener-handleevent-event-event"
+    },
+    {
+      "spec": "dom",
+      "type": "argument",
+      "for": [
+        "EventTarget/dispatchEvent(event)"
+      ],
+      "normative": true,
+      "uri": "#dom-eventtarget-dispatchevent-event-event"
+    },
+    {
+      "spec": "html",
+      "type": "element-attr",
+      "normative": true,
+      "uri": "obsolete.html#attr-script-event"
+    },
+    {
+      "spec": "html",
+      "type": "attribute",
+      "for": [
+        "HTMLScriptElement"
+      ],
+      "normative": true,
+      "uri": "obsolete.html#dom-script-event"
     }
   ]
 }
