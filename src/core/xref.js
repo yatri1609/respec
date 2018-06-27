@@ -14,7 +14,7 @@ export async function main(conf, possibleExternalLinks) {
 function getRefMap(elems) {
   return elems.reduce((xrefs, elem) => {
     let term = elem.dataset.xref || elem.textContent;
-    term = norm(term);
+    term = norm(term).toLowerCase();
     const datacite = elem.closest("[data-cite]");
     const specs = datacite ? datacite.dataset.cite.split(" ") : [];
     const types = [];
