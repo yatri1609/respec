@@ -3,17 +3,24 @@ dist: trusty
 node_js:
   - lts/*
 
+before_install:
+  # Enable user namespace cloning
+  - "sysctl kernel.unprivileged_userns_clone=1"
+
 install:
   - npm install
   - npm run build
   - npm run build:respec-w3c-common
 
-# use sudo to workaround https://github.com/w3c/respec/issues/1462 
+# use sudo to workaround https://github.com/w3c/respec/issues/1462
 sudo: required
 
 addons:
 #  firefox: latest
   chrome: stable
+  apt:
+    packages:
+      - libnss3
 
 cache:
   directories:
